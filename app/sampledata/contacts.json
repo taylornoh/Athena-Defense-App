@@ -1,0 +1,21 @@
+{
+  "comment": "Contact Data Simulation",
+  "data": [
+    {
+      "name": "Taylor",
+      "number": "000000000"
+    },
+    {
+      "name": "Ashley",
+      "number": "000000000"
+    },
+    {
+      "name": "Angela",
+      "number": "000000000"
+    },
+    {
+      "name": "Dennis",
+      "number": "000000000"
+    }
+  ]
+}
