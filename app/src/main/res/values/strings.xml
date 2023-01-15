@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Athena</string>
+    <string name="panic">Panic</string>
 </resources>
