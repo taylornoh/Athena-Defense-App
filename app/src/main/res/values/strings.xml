@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Athena</string>
     <string name="panic">Panic</string>
+    <string name="title_activity_passcode">PasscodeActivity</string>
 </resources>
