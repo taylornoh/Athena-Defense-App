@@ -32,7 +32,7 @@ class PasscodeActivity : ComponentActivity() {
         smsManager.sendTextMessage(
             "+00000000000",
             null,
-            "I might be in danger. Here's my location: https://ulogger.lima.zone/#111",
+            "I might be in danger. Monitor my location: https://ulogger.lima.zone/#112",
             null,
             null
         )

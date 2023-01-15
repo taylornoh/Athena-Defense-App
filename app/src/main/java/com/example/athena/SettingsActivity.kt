@@ -22,7 +22,9 @@ class SettingsActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    Greeting2("Settings User")
+                    Text("Emergency contacts:\n" +
+                            "+0 (000) 000-0000\n" +
+                            "Add emergency contact...\n")
                 }
             }
         }
