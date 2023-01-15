@@ -1,5 +1,6 @@
 package com.example.athena
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,12 +17,14 @@ import androidx.compose.ui.tooling.preview.Preview
 import com.example.athena.ui.theme.AthenaTheme
 import androidx.compose.runtime.*
 import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 
 class PasscodeActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sendBroadcast(location("start logger"))
         setContent {
             AthenaTheme {
                 // A surface container using the 'background' color from the theme
@@ -52,13 +55,20 @@ fun DefaultPreview() {
 
 @Composable
 fun PasswordTextField() {
+    // Grabbing context before entering layout
+    val mContext = LocalContext.current
     var password by rememberSaveable { mutableStateOf("") }
 
     TextField(
         value = password,
-        onValueChange = { password = it },
+        onValueChange = {
+            password = it
+            if (password == "1234") {
+                val intent = Intent(mContext, MainActivity::class.java)
+                mContext.startActivity(intent)
+            }},
         label = { Text("Enter password") },
         visualTransformation = PasswordVisualTransformation(),
-        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.Password)
+        keyboardOptions = KeyboardOptions(keyboardType = KeyboardType.NumberPassword)
     )
 }

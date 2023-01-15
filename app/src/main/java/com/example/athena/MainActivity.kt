@@ -17,6 +17,7 @@ import com.example.athena.ui.theme.AthenaTheme
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        sendBroadcast(location("stop logger"))
         setContent {
             AthenaTheme {
                 PanicButton()
